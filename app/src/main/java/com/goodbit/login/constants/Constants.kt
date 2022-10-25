@@ -11,7 +11,7 @@ class Constants private constructor(){
         const val CPF="cpf"
         const val USER="user"
         const val PASSWORD="password"
-        const val WHATSAPP="whatsapp"
+        const val WHATSAPP="whats"
 
     }
 

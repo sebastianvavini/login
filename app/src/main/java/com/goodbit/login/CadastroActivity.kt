@@ -3,6 +3,7 @@ package com.goodbit.login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.goodbit.login.data.model.UserModel
@@ -23,6 +24,16 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
 
 
         viewModel= ViewModelProvider(this).get(CadastroViewModel::class.java)
+        viewModel.salvou.observe(this){
+
+            if (it){
+               Toast.makeText(this,"Salvou, Amigo!",Toast.LENGTH_LONG).show()
+                binding.editUsername.setText("")
+                binding.editSenha.setText("")
+                binding.editCpf.setText("")
+                binding.editWhats.setText("")
+            }
+        }
     }
 
     override fun onClick(v: View) {
@@ -38,6 +49,8 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
 
             viewModel.insert(user)
             println("Passou do insert")
+
+
 
         }
     }
