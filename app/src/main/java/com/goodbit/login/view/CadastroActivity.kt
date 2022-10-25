@@ -1,11 +1,12 @@
-package com.goodbit.login
+package com.goodbit.login.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.goodbit.login.viewmodel.CadastroViewModel
+import com.goodbit.login.R
 import com.goodbit.login.data.model.UserModel
 import com.goodbit.login.databinding.ActivityCadastroBinding
 
@@ -37,7 +38,7 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (v.id==R.id.button_salvar){
+        if (v.id== R.id.button_salvar){
 
            val username= binding.editUsername.text.toString()
             val password=  binding.editSenha.text.toString()

@@ -1,4 +1,4 @@
-package com.goodbit.login.data
+package com.goodbit.login.data.repository
 
 import android.content.ContentValues
 import android.content.Context

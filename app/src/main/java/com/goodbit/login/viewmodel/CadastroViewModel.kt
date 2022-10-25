@@ -1,10 +1,10 @@
-package com.goodbit.login
+package com.goodbit.login.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.goodbit.login.data.CadastroRepository
+import com.goodbit.login.data.repository.CadastroRepository
 import com.goodbit.login.data.model.UserModel
 
 class CadastroViewModel(application: Application) : AndroidViewModel(application) {
