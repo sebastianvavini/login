@@ -1,9 +1,11 @@
 package com.goodbit.login.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.goodbit.login.viewmodel.CadastroViewModel
 import com.goodbit.login.R
@@ -21,6 +23,7 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.buttonSalvar.setOnClickListener(this)
+        binding.buttonIrLogin.setOnClickListener(this)
 
 
 
@@ -33,6 +36,7 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
                 binding.editSenha.setText("")
                 binding.editCpf.setText("")
                 binding.editWhats.setText("")
+                binding.buttonIrLogin.isVisible=true
             }
         }
     }
@@ -53,6 +57,9 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
+        }
+        if(v.id==R.id.button_ir_login){
+            startActivity(Intent(this,LoginActivity::class.java))
         }
     }
 }
