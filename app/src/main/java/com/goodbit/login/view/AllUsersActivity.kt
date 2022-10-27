@@ -14,6 +14,7 @@ class AllUsersActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CadastroViewModel
     private lateinit var binding: ActivityAllUsersBinding
+    private var adapter=UsersAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,7 +28,7 @@ class AllUsersActivity : AppCompatActivity() {
         binding.recyclerAllUsers.layoutManager = LinearLayoutManager(applicationContext)
 
         //Adapter
-        binding.recyclerAllUsers.adapter= UsersAdapter()
+        binding.recyclerAllUsers.adapter= adapter
 
         viewModel.getAllUsers()
 
@@ -35,6 +36,7 @@ class AllUsersActivity : AppCompatActivity() {
     fun observe(){
         viewModel.lista.observe(this){
 
+            adapter.updateUsers(it)
         }
     }
 }

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
-            android:name=".AllUsersActivity"
+            android:name=".view.AllUsersActivity"
             android:exported="false" />
         <activity
             android:name=".view.LoginActivity"

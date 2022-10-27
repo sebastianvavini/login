@@ -24,6 +24,7 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonSalvar.setOnClickListener(this)
         binding.buttonIrLogin.setOnClickListener(this)
+        binding.buttonListar.setOnClickListener(this)
 
 
 
@@ -60,6 +61,9 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
         }
         if(v.id==R.id.button_ir_login){
             startActivity(Intent(this,LoginActivity::class.java))
+        }
+        if (v.id==R.id.button_listar){
+            startActivity(Intent(this,AllUsersActivity::class.java))
         }
     }
 }
