@@ -32,7 +32,7 @@
 
         />
     <Button
-        android:id="@+id/butto_entrar"
+        android:id="@+id/button_entrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Entrar"

@@ -87,17 +87,46 @@ class CadastroRepository private constructor(context: Context){
     }
 
     fun getUser(user: UserModel):Boolean{
+        var retorno= false
 
         try {
             val db = database.writableDatabase
 
             val tabela= Constants.TABLE.TABLE_NAME_USER
+            val id=Constants.COLUMNS_USER.ID
+            val username=Constants.COLUMNS_USER.USER
+            val whats= Constants.COLUMNS_USER.WHATSAPP
+            val cpf= Constants.COLUMNS_USER.CPF
+            val passwd= Constants.COLUMNS_USER.PASSWORD
 
-           // db.insert(tabela,null,values)
 
-            "select * from user where user=? and password=?"
+            val columns= arrayOf(id,username,whats,cpf)
 
-            return true
+            val selection="$username = ? and $passwd = ?"
+            val args= arrayOf(user.user.toString(),user.password.toString())
+
+
+
+            val cursor=db.query(tabela,columns,selection,
+                args,null,null,null)
+
+            if(cursor!=null && cursor.count>0 && cursor.count<2){
+
+                while (cursor.moveToNext()){
+                    val usename_= cursor.getString(cursor.getColumnIndex(username))
+                    val cpf_= cursor.getString(cursor.getColumnIndex(cpf))
+                    val whats_=cursor.getString(cursor.getColumnIndex(whats))
+                    val id_ =cursor.getInt(cursor.getColumnIndex(id))
+
+                    UserModel(id_,usename_,cpf_,"******",whats_)
+                }
+                retorno= true
+            }
+            cursor.close()
+
+
+
+            return retorno
         }
         catch (e:Exception){
             return false
