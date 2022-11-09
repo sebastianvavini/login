@@ -25,11 +25,11 @@ class CadastroViewModel(application: Application) : AndroidViewModel(application
         listaUsers_.value= repository.getAll()
     }
 
-    private var logou_ = MutableLiveData<Boolean>()
-    var logou: LiveData<Boolean> = logou_
+    private var logado_ = MutableLiveData<UserModel>()
+    var logado: LiveData<UserModel> = logado_
 
     fun getUser(userModel: UserModel){
-        logou_.value= repository.getUser(userModel)
+        logado_.value= repository.getUser(userModel)
     }
 
 }

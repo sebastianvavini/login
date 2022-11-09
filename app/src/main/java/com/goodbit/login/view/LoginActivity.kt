@@ -1,5 +1,6 @@
 package com.goodbit.login.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,8 +23,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonEntrar.setOnClickListener(this)
 
-        viewModel.logou.observe(this){
-            println("Logou = $it")
+        viewModel.logado.observe(this){
+            //println("Logou = $it")
+
+            var intent = Intent(this,SalaActivity::class.java)
+                intent.putExtra("user_key",it.user)
+            startActivity(intent)
         }
     }
 

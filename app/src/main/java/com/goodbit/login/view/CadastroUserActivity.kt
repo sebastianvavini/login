@@ -12,7 +12,7 @@ import com.goodbit.login.R
 import com.goodbit.login.data.model.UserModel
 import com.goodbit.login.databinding.ActivityCadastroBinding
 
-class CadastroActivity : AppCompatActivity(), View.OnClickListener {
+class CadastroUserActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityCadastroBinding
     private lateinit var viewModel: CadastroViewModel
@@ -24,7 +24,7 @@ class CadastroActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonSalvar.setOnClickListener(this)
         binding.buttonIrLogin.setOnClickListener(this)
-        binding.buttonListar.setOnClickListener(this)
+       // binding.buttonListar.setOnClickListener(this)
 
 
 
