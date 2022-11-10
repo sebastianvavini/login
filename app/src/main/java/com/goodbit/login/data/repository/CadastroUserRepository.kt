@@ -5,15 +5,15 @@ import android.content.Context
 import com.goodbit.login.constants.Constants
 import com.goodbit.login.data.model.UserModel
 
-class CadastroRepository private constructor(context: Context){
+class CadastroUserRepository private constructor(context: Context){
     private val database= LoginBanco(context)
 
     companion object{
-        private lateinit var repository: CadastroRepository
+        private lateinit var repository: CadastroUserRepository
 
-        fun getInstance(context: Context): CadastroRepository {
+        fun getInstance(context: Context): CadastroUserRepository {
             if(!Companion::repository.isInitialized){
-                repository = CadastroRepository(context)
+                repository = CadastroUserRepository(context)
             }
             return repository
         }
