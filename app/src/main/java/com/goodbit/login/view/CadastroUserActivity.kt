@@ -23,7 +23,7 @@ class CadastroUserActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.buttonSalvar.setOnClickListener(this)
-        binding.buttonIrLogin.setOnClickListener(this)
+
        // binding.buttonListar.setOnClickListener(this)
 
 
@@ -37,7 +37,7 @@ class CadastroUserActivity : AppCompatActivity(), View.OnClickListener {
                 binding.editSenha.setText("")
                 binding.editCpf.setText("")
                 binding.editWhats.setText("")
-                binding.buttonIrLogin.isVisible=true
+
             }
         }
     }
